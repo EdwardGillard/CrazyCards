@@ -4,8 +4,14 @@ h1 {
   padding: 10px;
 }
 
+h1,
+h3 {
+  font-family: "Baloo Tammudu 2", cursive;
+}
+
 //! --- Style for Home Component ---
-.home--page {
+.home--page,
+.errors--page {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -143,10 +149,12 @@ h1 {
   }
 
   //! --- Home Page M.Q ---
-  .home--page h1 {
+  .home--page h1,
+  .errors--page h1 {
     font-size: 2.5rem;
   }
-  .home--page p {
+  .home--page p,
+  .errors--page p {
     font-size: 1rem;
   }
 

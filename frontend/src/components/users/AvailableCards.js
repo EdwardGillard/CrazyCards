@@ -1,5 +1,6 @@
 import React from 'react'
 import { getAllCards } from '../../lib/api'
+import { Link, Redirect } from 'react-router-dom'
 
 const initialState = {
   data: null,
@@ -29,14 +30,20 @@ function AvailableCards(props) {
   }, [])
 
   if (!userDetails) return (
-    <h1> Please submit details </h1>
+    <div className="errors--page">
+      <h1> Please submit details to see available cards</h1>
+      <p><Link to="/form">Click here</Link> to find out your eligibility</p>
+    </div>
   )
+
+  if(cards.error) return <Redirect to="/errors"></Redirect>
 
   //! Function to capitalize first letters of customers names.
   const capitalize = () => {
     return userDetails.fullName.split(' ').map(name => name.charAt(0).toUpperCase() + name.slice(1)).join(' ')
   }
 
+  //! Function to filter available card. 
   const filterCards = () => {
     let filteredCards
     //! Filter method cards in state for required employment type against user's employment status. 
@@ -63,6 +70,7 @@ function AvailableCards(props) {
     }
   }
 
+  //! JSX for rendering the findOutMore if its length is atleast one, filtered cards, onClick function to add selected cards and add a total available funds. 
   return (
     <div className="page--container" >
       {cards.loading ? <h1>Loading</h1> :
