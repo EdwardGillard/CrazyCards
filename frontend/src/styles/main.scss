@@ -1,0 +1,177 @@
+//! --- General ---
+h1 {
+  font-size: 1.5em;
+  padding: 10px;
+}
+
+//! --- Style for Home Component ---
+.home--page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 90vh;
+  h1 {
+    font-size: 3.5rem;
+  }
+  p {
+    width: 80%;
+    font-size: 1.5rem;
+  }
+}
+//! --- Style for Form Component ---
+
+.form--page {
+  display: flex;
+  justify-content: center;
+  form {
+    background-color: rgba(128, 128, 128, 0.5);
+    border: 2px solid black;
+    box-shadow: 2px 2px grey;
+    padding: 20px 50px;
+    width: 50%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    button {
+      font-size: 1.2rem;
+      padding: 10px;
+      &:hover {
+        background-color: black;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+  .form--input {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 5px;
+    input,
+    select {
+      width: 90%;
+      margin: 5px;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+//! --- Style for AvailableCards component---
+.page--container {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  .page {
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 50px;
+    background-color: rgba(128, 128, 128, 0.5);
+    border: 2px solid black;
+    box-shadow: 2px 2px grey;
+    .right--side,
+    .left--side {
+      margin: 10px;
+      padding: 10px;
+      border-radius: 10%;
+      border: 2px solid white;
+      background-color: grey;
+      box-shadow: 2px 2px 2px grey;
+      display: flex;
+      width: 40%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center;
+      min-height: 60vh;
+      .each--card {
+        width: 80%;
+        margin: 10px;
+        text-align: left;
+        padding: 0.5rem;
+        border-radius: 10px;
+      }
+    }
+    .left--side .each--card {
+      background-color: rgba(0, 0, 128, 0.5);
+      color: yellow;
+      border: 2px solid yellow;
+      &:hover {
+        background-color: yellow;
+        color: black;
+        border: 2px solid yellow;
+        cursor: pointer;
+      }
+    }
+    .right--side .each--card {
+      text-align: center;
+      background-color: black;
+      color: red;
+      border: 2px solid red;
+      &:hover {
+        background-color: red;
+        color: black;
+        border: 2px solid black;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+//! Error handler class
+.red {
+  border-color: red;
+}
+
+//! --- Media Query ---
+@media only screen and (max-width: 800px) {
+  //! --- General M.Q---
+  h1,
+  h4 {
+    font-size: 1.2em;
+    margin: 0;
+  }
+  p {
+    margin: 0;
+  }
+
+  //! --- Home Page M.Q ---
+  .home--page h1 {
+    font-size: 2.5rem;
+  }
+  .home--page p {
+    font-size: 1rem;
+  }
+
+  //! --- Available Cards M.Q ---
+  .page {
+    min-width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 0;
+    margin: 20px 0;
+    .right--side,
+    .left--side {
+      min-width: 80%;
+      justify-content: center;
+    }
+  }
+
+  //! --- Form Component M.Q ---
+  form {
+    min-width: 90%;
+    .form--input {
+      width: 90%;
+      margin: 10px;
+    }
+  }
+}
