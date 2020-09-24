@@ -4,7 +4,7 @@
 
 ## How to run this app: ##
 
-Please run yarn start to begin the server
+Please cd into frontend folder run yarn start to begin the server
 
 `yarn start` to run the development server
 
